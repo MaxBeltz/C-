@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.*;
+
+class Smallest
+{
+  public void make ()
+  {
+  }
+  public void alg(int t, int v, int[][] current, int[][] old)
+  {
+    for (int i=0; i < v; i++)
+    {
+      for(int j=0; j < v; j++)
+        current[i][j] = Math.min(old[i][t] + old[t][j], old[i][j]);
+    }
+  }
+  public void copy(int v, int current[][], int old[][])
+  {
+     for (int i=0; i < v; i++)
+     {
+      for(int j=0; j < v; j++)
+        old[i][j] = current[i][j];
+     }
+  }
+  public static void main(String [] args) throws IOException
+ {
+    Scanner read = new Scanner(new FileReader("Weight.txt"));
+    Scanner scan = new Scanner(System.in);
+    System.out.println("1. println ");
+    int vert = scan.nextInt();
+    int old[][] = new int[vert][vert];
+    int current[][] = new int[vert][vert];
+    for (int i=0; i < vert; i++)
+    {
+      for(int j=0; j < vert; j++)
+      {
+        current[i][j] = read.nextInt();
+        old[i][j] = current[i][j]
+      }
+    }
+    for (t=1; t < vert; t++)
+    {
+    }
+    
+    for (int i=0; i < vert; i++)
+    {
+      for(int j=0; j < vert; j++)
+        System.out.print(current[i][j] + " ");
+      System.out.println("");
+    }
+  }
+}
